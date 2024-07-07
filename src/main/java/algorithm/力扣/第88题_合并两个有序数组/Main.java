@@ -31,8 +31,9 @@ public class Main {
     private static void solve1(int[] nums1, int[] nums2) {
         long time = System.nanoTime();
         int m = nums1.length - nums2.length;
-        // 合并两个数组
-        System.arraycopy(nums2, 0, nums1, m, nums2.length);
+        for (int i = 0; i < nums2.length; i++) {   // 合并两个数组
+            nums1[m + i] = nums2[i];
+        }
         System.out.println("solve1, 拼接后的数组: " + Arrays.toString(nums1));
         // 排序
         Arrays.sort(nums1);
